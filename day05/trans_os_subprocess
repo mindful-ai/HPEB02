@@ -1,0 +1,76 @@
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> import OS
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    import OS
+ModuleNotFoundError: No module named 'OS'
+>>> import os
+>>> os.getcwd()
+'C:\\Users\\Purushotham\\AppData\\Local\\Programs\\Python\\Python37'
+>>> os.listdir()
+['data.db.bak', 'data.db.dat', 'data.db.dir', 'DLLs', 'Doc', 'examples', 'include', 'Lib', 'libs', 'LICENSE.txt', 'NEWS.txt', 'python.exe', 'python3.dll', 'python37.dll', 'pythonw.exe', 'Scripts', 'share', 'tcl', 'Tools', 'vcruntime140.dll']
+>>> os.chdir(r"C:\Users\Purushotham\Desktop\Clients\HPE\HPEB02\day05")
+>>> os.getcwd()
+'C:\\Users\\Purushotham\\Desktop\\Clients\\HPE\\HPEB02\\day05'
+>>> os.mkdir('test')
+>>> os.chdir('test')
+>>> f = open('test.txt', 'w')
+>>> f.write('Hello World')
+11
+>>> f.close()
+>>> os.chdir(os.pardir)
+>>> os.chdir(os.pardir)
+>>> os.listdir()
+['day01', 'day02', 'day03', 'day04', 'day05', 'mcqs']
+>>> import subprocess
+>>> subprocess.call('dir' shell=True)
+SyntaxError: invalid syntax
+>>> subprocess.call('dir', shell=True)
+0
+>>> content = subprocess.check_output('dir')
+Traceback (most recent call last):
+  File "<pyshell#17>", line 1, in <module>
+    content = subprocess.check_output('dir')
+  File "C:\Users\Purushotham\AppData\Local\Programs\Python\Python37\lib\subprocess.py", line 395, in check_output
+    **kwargs).stdout
+  File "C:\Users\Purushotham\AppData\Local\Programs\Python\Python37\lib\subprocess.py", line 472, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Users\Purushotham\AppData\Local\Programs\Python\Python37\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\Users\Purushotham\AppData\Local\Programs\Python\Python37\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+>>> import subprocess
+>>> subprocess.call('dir', shell=True)
+0
+>>> subprocess.check_output('dir', shell=True)
+b' Volume in drive C is Windows\r\n Volume Serial Number is 68CD-4284\r\n\r\n Directory of C:\\Users\\Purushotham\\Desktop\\Clients\\HPE\\HPEB02\r\n\r\n17-01-2020  11:11    <DIR>          .\r\n17-01-2020  11:11    <DIR>          ..\r\n09-01-2020  17:05    <DIR>          day01\r\n13-01-2020  18:03    <DIR>          day02\r\n14-01-2020  17:37    <DIR>          day03\r\n16-01-2020  17:54    <DIR>          day04\r\n17-01-2020  17:16    <DIR>          day05\r\n08-01-2020  23:44    <DIR>          mcqs\r\n               0 File(s)              0 bytes\r\n               8 Dir(s)  320,246,779,904 bytes free\r\n'
+>>> content = subprocess.check_output('dir', shell=True)
+>>> content
+b' Volume in drive C is Windows\r\n Volume Serial Number is 68CD-4284\r\n\r\n Directory of C:\\Users\\Purushotham\\Desktop\\Clients\\HPE\\HPEB02\r\n\r\n17-01-2020  11:11    <DIR>          .\r\n17-01-2020  11:11    <DIR>          ..\r\n09-01-2020  17:05    <DIR>          day01\r\n13-01-2020  18:03    <DIR>          day02\r\n14-01-2020  17:37    <DIR>          day03\r\n16-01-2020  17:54    <DIR>          day04\r\n17-01-2020  17:16    <DIR>          day05\r\n08-01-2020  23:44    <DIR>          mcqs\r\n               0 File(s)              0 bytes\r\n               8 Dir(s)  320,246,849,536 bytes free\r\n'
+>>> content = subprocess.check_output('ipconfig -all', shell=True)
+>>> content
+b'\r\nWindows IP Configuration\r\n\r\n   Host Name . . . . . . . . . . . . : Purushotham\r\n   Primary Dns Suffix  . . . . . . . : \r\n   Node Type . . . . . . . . . . . . : Hybrid\r\n   IP Routing Enabled. . . . . . . . : No\r\n   WINS Proxy Enabled. . . . . . . . : No\r\n   DNS Suffix Search List. . . . . . : guest.wireless.com\r\n\r\nEthernet adapter Ethernet:\r\n\r\n   Media State . . . . . . . . . . . : Media disconnected\r\n   Connection-specific DNS Suffix  . : \r\n   Description . . . . . . . . . . . : Realtek PCIe GBE Family Controller\r\n   Physical Address. . . . . . . . . : 8C-16-45-D7-2F-BE\r\n   DHCP Enabled. . . . . . . . . . . : Yes\r\n   Autoconfiguration Enabled . . . . : Yes\r\n\r\nWireless LAN adapter Local Area Connection* 1:\r\n\r\n   Media State . . . . . . . . . . . : Media disconnected\r\n   Connection-specific DNS Suffix  . : \r\n   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter\r\n   Physical Address. . . . . . . . . : B0-FC-36-B3-D3-51\r\n   DHCP Enabled. . . . . . . . . . . : Yes\r\n   Autoconfiguration Enabled . . . . : Yes\r\n\r\nWireless LAN adapter Local Area Connection* 2:\r\n\r\n   Media State . . . . . . . . . . . : Media disconnected\r\n   Connection-specific DNS Suffix  . : \r\n   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2\r\n   Physical Address. . . . . . . . . : B2-FC-36-B3-D3-51\r\n   DHCP Enabled. . . . . . . . . . . : Yes\r\n   Autoconfiguration Enabled . . . . : Yes\r\n\r\nEthernet adapter VMware Network Adapter VMnet1:\r\n\r\n   Connection-specific DNS Suffix  . : \r\n   Description . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet1\r\n   Physical Address. . . . . . . . . : 00-50-56-C0-00-01\r\n   DHCP Enabled. . . . . . . . . . . : Yes\r\n   Autoconfiguration Enabled . . . . : Yes\r\n   Link-local IPv6 Address . . . . . : fe80::7531:e521:20a:37cc%17(Preferred) \r\n   IPv4 Address. . . . . . . . . . . : 192.168.17.1(Preferred) \r\n   Subnet Mask . . . . . . . . . . . : 255.255.255.0\r\n   Lease Obtained. . . . . . . . . . : 17 January 2020 10:35:27\r\n   Lease Expires . . . . . . . . . . : 17 January 2020 17:50:30\r\n   Default Gateway . . . . . . . . . : \r\n   DHCP Server . . . . . . . . . . . : 192.168.17.254\r\n   DHCPv6 IAID . . . . . . . . . . . : 788549718\r\n   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-23-0A-DB-FD-8C-16-45-D7-2F-BE\r\n   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1\r\n                                       fec0:0:0:ffff::2%1\r\n                                       fec0:0:0:ffff::3%1\r\n   NetBIOS over Tcpip. . . . . . . . : Enabled\r\n\r\nEthernet adapter VMware Network Adapter VMnet8:\r\n\r\n   Connection-specific DNS Suffix  . : \r\n   Description . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet8\r\n   Physical Address. . . . . . . . . : 00-50-56-C0-00-08\r\n   DHCP Enabled. . . . . . . . . . . : Yes\r\n   Autoconfiguration Enabled . . . . : Yes\r\n   Link-local IPv6 Address . . . . . : fe80::11d2:eff4:7247:c26e%11(Preferred) \r\n   IPv4 Address. . . . . . . . . . . : 192.168.255.1(Preferred) \r\n   Subnet Mask . . . . . . . . . . . : 255.255.255.0\r\n   Lease Obtained. . . . . . . . . . : 17 January 2020 10:35:27\r\n   Lease Expires . . . . . . . . . . : 17 January 2020 17:50:30\r\n   Default Gateway . . . . . . . . . : \r\n   DHCP Server . . . . . . . . . . . : 192.168.255.254\r\n   DHCPv6 IAID . . . . . . . . . . . : 805326934\r\n   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-23-0A-DB-FD-8C-16-45-D7-2F-BE\r\n   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1\r\n                                       fec0:0:0:ffff::2%1\r\n                                       fec0:0:0:ffff::3%1\r\n   Primary WINS Server . . . . . . . : 192.168.255.2\r\n   NetBIOS over Tcpip. . . . . . . . : Enabled\r\n\r\nWireless LAN adapter Wi-Fi:\r\n\r\n   Connection-specific DNS Suffix  . : guest.wireless.com\r\n   Description . . . . . . . . . . . : Realtek 8821CE Wireless LAN 802.11ac PCI-E NIC\r\n   Physical Address. . . . . . . . . : B0-FC-36-B3-D3-51\r\n   DHCP Enabled. . . . . . . . . . . : Yes\r\n   Autoconfiguration Enabled . . . . : Yes\r\n   Link-local IPv6 Address . . . . . : fe80::99e2:43b0:d828:6e46%18(Preferred) \r\n   IPv4 Address. . . . . . . . . . . : 10.10.2.236(Preferred) \r\n   Subnet Mask . . . . . . . . . . . : 255.255.240.0\r\n   Lease Obtained. . . . . . . . . . : 17 January 2020 10:35:43\r\n   Lease Expires . . . . . . . . . . : 17 January 2020 23:09:33\r\n   Default Gateway . . . . . . . . . : 10.10.0.1\r\n   DHCP Server . . . . . . . . . . . : 10.10.0.1\r\n   DHCPv6 IAID . . . . . . . . . . . : 112262198\r\n   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-23-0A-DB-FD-8C-16-45-D7-2F-BE\r\n   DNS Servers . . . . . . . . . . . : 8.8.8.8\r\n                                       8.8.4.4\r\n   NetBIOS over Tcpip. . . . . . . . : Enabled\r\n\r\nEthernet adapter Bluetooth Network Connection:\r\n\r\n   Media State . . . . . . . . . . . : Media disconnected\r\n   Connection-specific DNS Suffix  . : \r\n   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network)\r\n   Physical Address. . . . . . . . . : B0-FC-36-B3-D3-52\r\n   DHCP Enabled. . . . . . . . . . . : Yes\r\n   Autoconfiguration Enabled . . . . : Yes\r\n'
+>>> content
+
+>>> type(content)
+<class 'bytes'>
+>>> content = str(content)
+>>> content
+
+>>> type(content)
+<class 'str'>
+>>> content = content.split('\\r\\n')
+>>> content
+
+>>> for line in content:
+	print(line)
+
+'
+>>> for line in content:
+	if('Physical Address' in line):
+		print(line)
+
+
+>>> 

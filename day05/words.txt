@@ -1,0 +1,5 @@
+cow,dog,red,cat,bat,sit
+frog,goat,ship,bull,ball
+apple,house,mango,sheep,snake
+orange,banana,colour,father,mother,yellow
+brother,vehicle,rainbow
